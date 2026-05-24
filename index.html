@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeffrey Sen — Resume</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Scroll progress -->
+<div id="progress-bar" aria-hidden="true"></div>
+
+<!-- ══════════════════════════════════════════
+     SIDEBAR
+════════════════════════════════════════════ -->
+<aside>
+
+  <!-- Avatar -->
+  <div class="avatar-wrap">
+    <div class="avatar-ring" aria-hidden="true"></div>
+    <div class="avatar-inner">
+      <!-- Replace the line below with an <img> tag once you have a photo:
+           <img src="photo.jpg" alt="Jeffrey Sen" />
+           Until then the initials show as a fallback. -->
+      JS
+    </div>
+  </div>
+
+  <p class="sidebar-name">Jeffrey Sen</p>
+  <p class="sidebar-title">Engineer · CS Graduate Student</p>
+
+  <!-- Quick nav -->
+  <nav aria-label="Page sections">
+    <ul class="sidebar-nav">
+      <li><a href="#experience"><span class="dot" style="color:var(--purple)"></span>Experience</a></li>
+      <li><a href="#skills"><span class="dot" style="color:var(--teal)"></span>Skills</a></li>
+      <li><a href="#education"><span class="dot" style="color:var(--pink)"></span>Education</a></li>
+    </ul>
+  </nav>
+
+  <hr class="sidebar-divider" />
+
+  <!-- Contact -->
+  <p class="sidebar-heading">Contact</p>
+  <ul class="contact-list">
+    <li>
+      <span class="icon">📍</span>
+      San Jose, CA 95126
+    </li>
+    <li>
+      <span class="icon">📞</span>
+      <a href="tel:5406566269">540-656-6269</a>
+    </li>
+    <li>
+      <span class="icon">✉️</span>
+      <a href="mailto:jeffsen98@gmail.com">jeffsen98@gmail.com</a>
+    </li>
+    <li>
+      <span class="icon">💼</span>
+      <a href="https://linkedin.com/in/jeffreysen" target="_blank">linkedin.com/in/jeffreysen</a>
+    </li>
+    <li>
+      <span class="icon">🐙</span>
+      <a href="https://github.com/jeffsen98" target="_blank">github.com/jeffsen98</a>
+    </li>
+  </ul>
+
+  <hr class="sidebar-divider" />
+
+  <!-- Clearance -->
+  <p class="sidebar-heading">Security</p>
+  <span class="clearance-badge">🔐 U.S. DoD Secret Clearance</span>
+
+  <hr class="sidebar-divider" />
+
+  <!-- Objective blurb -->
+  <p class="sidebar-heading">About</p>
+  <p style="font-size:0.82rem;color:var(--muted);line-height:1.55;font-style:italic;">
+    Mechanical &amp; Aerospace engineer pivoting into software development via a USC CS master's degree. Strong analytical background across aerospace, defense, and R&amp;D.
+  </p>
+
+</aside>
+
+<!-- ══════════════════════════════════════════
+     MAIN CONTENT
+════════════════════════════════════════════ -->
+<main>
+
+  <!-- ── EXPERIENCE ── -->
+  <section id="experience" style="--accent:var(--purple)">
+    <div class="section-header">
+      <span class="num" style="color:var(--purple)">01</span>
+      <h2>Work Experience</h2>
+    </div>
+
+    <!-- Photo banner representing aerospace/engineering work -->
+    <div class="photo-grid">
+      <img
+        src="https://images.unsplash.com/photo-1517976487492-5750f3195933?w=900&q=80"
+        alt="Airship / aerospace engineering"
+      />
+      <img
+        src="https://images.unsplash.com/photo-1581092787765-e3feb951d987?w=400&q=80"
+        alt="Engineering design"
+      />
+      <img
+        src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400&q=80"
+        alt="Structural analysis"
+      />
+    </div>
+
+    <div class="exp-card" style="--accent:var(--purple)">
+      <div class="exp-header">
+        <h3>Design Engineer — Soft Structures Engineering</h3>
+        <span class="exp-date">Sep 2025 – Present</span>
+      </div>
+      <p class="exp-company">LTA Research · San Jose, CA</p>
+      <ul>
+        <li>Fast-paced startup environment supporting rapid prototyping and iterative development of novel airship technologies — helium diffusion, gas cell fill line adapters, water ingress mitigation.</li>
+        <li>Contribute across the full hardware lifecycle: concept development, analysis, fabrication support, testing, and integration.</li>
+        <li>Lead structural design efforts for pressurized softgoods assemblies used in large-scale lighter-than-air vehicle systems.</li>
+        <li>Drive cross-functional resolution of manufacturability and integration issues between sewn softgoods and rigid aerospace hardware.</li>
+      </ul>
+    </div>
+
+    <div class="exp-card" style="--accent:var(--teal)">
+      <div class="exp-header">
+        <h3>Stress Analysis Engineer — 737 NG/MAX Airframe Engineering</h3>
+        <span class="exp-date">Mar 2023 – Sep 2025</span>
+      </div>
+      <p class="exp-company" style="color:var(--teal)">The Boeing Company</p>
+      <ul>
+        <li>Designed aircraft fuselage repairs using classical static stress analysis, allowable determinations, and fatigue considerations for critical structural details.</li>
+        <li>Produced structural analysis substantiation Strength Check Notes and reference packages supporting airline fleet requests.</li>
+        <li>Extracted and utilized FEA internal static and fatigue loads data; navigated aircraft parts in ENOVIA LCA and analyzed 3D models in CATIA V5.</li>
+      </ul>
+    </div>
+
+    <div class="exp-card" style="--accent:var(--coral)">
+      <div class="exp-header">
+        <h3>Structural &amp; Mechanical Design Engineer — GMD Interceptor Production</h3>
+        <span class="exp-date">Jan 2022 – Mar 2023</span>
+      </div>
+      <p class="exp-company" style="color:var(--coral)">The Boeing Company</p>
+      <ul>
+        <li>Supported the Ground-Based Midcourse Defense (GMD) program, designing mechanical and electrical hardware in NX and AutoCAD (2D &amp; 3D).</li>
+        <li>Hardware designs: GBI Payload to Boost Vehicle assembly, GBI Shroud Close-out, Silo Assembly, and GBI Emplaced Assembly.</li>
+        <li>Liaison connecting engineers, technicians, manufacturing, and quality for non-conformance resolution via procedural work orders and dispositions.</li>
+        <li>Obtained U.S. DoD Secret Security Clearance.</li>
+      </ul>
+    </div>
+
+    <div class="exp-card" style="--accent:var(--amber)">
+      <div class="exp-header">
+        <h3>Junior Engineer — Research, Development &amp; Engineering</h3>
+        <span class="exp-date">May 2021 – Dec 2021</span>
+      </div>
+      <p class="exp-company" style="color:var(--amber)">Prescient Edge</p>
+      <ul>
+        <li>Analyzed accelerometers, force transducers, ultrasound, EO/IR sensors, RF protective material, radar, acoustics, and Kevlar to release 15 technical reports.</li>
+        <li>Developed concept for a decentralized machine learning platform for federal customers to assess feasibility and improve product direction.</li>
+        <li>Supported proposals for government contracts; provided engineering guidance for the business-development team.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── SKILLS ── -->
+  <section id="skills" style="--accent:var(--teal)">
+    <div class="section-header">
+      <span class="num" style="color:var(--teal)">02</span>
+      <h2>Skills</h2>
+    </div>
+
+    <img
+      class="img-banner"
+      src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=900&q=80"
+      alt="Code and engineering tools"
+    />
+
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h4 style="color:var(--purple)">Programming</h4>
+        <div class="skill-tags">
+          <span class="skill-tag" style="--tag-bg:rgba(127,119,221,0.12);--tag-text:#c0bcf8;--tag-border:rgba(127,119,221,0.25)">MATLAB</span>
+          <span class="skill-tag" style="--tag-bg:rgba(127,119,221,0.12);--tag-text:#c0bcf8;--tag-border:rgba(127,119,221,0.25)">Python</span>
+          <span class="skill-tag" style="--tag-bg:rgba(127,119,221,0.12);--tag-text:#c0bcf8;--tag-border:rgba(127,119,221,0.25)">Java</span>
+          <span class="skill-tag" style="--tag-bg:rgba(127,119,221,0.12);--tag-text:#c0bcf8;--tag-border:rgba(127,119,221,0.25)">C++</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h4 style="color:var(--teal)">CAD &amp; Design</h4>
+        <div class="skill-tags">
+          <span class="skill-tag" style="--tag-bg:rgba(29,158,117,0.12);--tag-text:#7ddbb8;--tag-border:rgba(29,158,117,0.25)">NX</span>
+          <span class="skill-tag" style="--tag-bg:rgba(29,158,117,0.12);--tag-text:#7ddbb8;--tag-border:rgba(29,158,117,0.25)">CATIA V5</span>
+          <span class="skill-tag" style="--tag-bg:rgba(29,158,117,0.12);--tag-text:#7ddbb8;--tag-border:rgba(29,158,117,0.25)">SolidWorks</span>
+          <span class="skill-tag" style="--tag-bg:rgba(29,158,117,0.12);--tag-text:#7ddbb8;--tag-border:rgba(29,158,117,0.25)">Inventor</span>
+          <span class="skill-tag" style="--tag-bg:rgba(29,158,117,0.12);--tag-text:#7ddbb8;--tag-border:rgba(29,158,117,0.25)">AutoCAD</span>
+          <span class="skill-tag" style="--tag-bg:rgba(29,158,117,0.12);--tag-text:#7ddbb8;--tag-border:rgba(29,158,117,0.25)">Rhino</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h4 style="color:var(--coral)">Analysis &amp; Simulation</h4>
+        <div class="skill-tags">
+          <span class="skill-tag" style="--tag-bg:rgba(216,90,48,0.12);--tag-text:#f0a882;--tag-border:rgba(216,90,48,0.25)">ANSYS</span>
+          <span class="skill-tag" style="--tag-bg:rgba(216,90,48,0.12);--tag-text:#f0a882;--tag-border:rgba(216,90,48,0.25)">Fluent</span>
+          <span class="skill-tag" style="--tag-bg:rgba(216,90,48,0.12);--tag-text:#f0a882;--tag-border:rgba(216,90,48,0.25)">FEADMS</span>
+          <span class="skill-tag" style="--tag-bg:rgba(216,90,48,0.12);--tag-text:#f0a882;--tag-border:rgba(216,90,48,0.25)">XSA</span>
+          <span class="skill-tag" style="--tag-bg:rgba(216,90,48,0.12);--tag-text:#f0a882;--tag-border:rgba(216,90,48,0.25)">CSW</span>
+          <span class="skill-tag" style="--tag-bg:rgba(216,90,48,0.12);--tag-text:#f0a882;--tag-border:rgba(216,90,48,0.25)">ISSW</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h4 style="color:var(--blue)">PLM &amp; Tools</h4>
+        <div class="skill-tags">
+          <span class="skill-tag" style="--tag-bg:rgba(55,138,221,0.12);--tag-text:#87c0f5;--tag-border:rgba(55,138,221,0.25)">ENOVIA</span>
+          <span class="skill-tag" style="--tag-bg:rgba(55,138,221,0.12);--tag-text:#87c0f5;--tag-border:rgba(55,138,221,0.25)">Windchill</span>
+          <span class="skill-tag" style="--tag-bg:rgba(55,138,221,0.12);--tag-text:#87c0f5;--tag-border:rgba(55,138,221,0.25)">Canvas</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EDUCATION ── -->
+  <section id="education" style="--accent:var(--pink)">
+    <div class="section-header">
+      <span class="num" style="color:var(--pink)">03</span>
+      <h2>Education</h2>
+    </div>
+
+    <img
+      class="img-banner"
+      src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=900&q=80"
+      alt="University campus"
+    />
+
+    <div class="edu-cards">
+      <div class="edu-card">
+        <div class="edu-icon" style="--icon-bg:rgba(127,119,221,0.18)">🎓</div>
+        <div>
+          <h3>M.S. Computer Science</h3>
+          <p class="school">University of Southern California</p>
+          <span class="gpa">GPA 3.5 &nbsp;·&nbsp; Aug 2025 – Present</span>
+        </div>
+      </div>
+
+      <div class="edu-card">
+        <div class="edu-icon" style="--icon-bg:rgba(29,158,117,0.18)">🔧</div>
+        <div>
+          <h3>M.S. Mechanical Engineering</h3>
+          <p class="school">North Carolina State University</p>
+          <span class="gpa">GPA 3.7 &nbsp;·&nbsp; Jan 2022 – Dec 2023</span>
+        </div>
+      </div>
+
+      <div class="edu-card">
+        <div class="edu-icon" style="--icon-bg:rgba(216,90,48,0.18)">✈️</div>
+        <div>
+          <h3>B.S. Mechanical Engineering</h3>
+          <p class="school">Virginia Tech</p>
+          <span class="gpa">GPA 3.2 &nbsp;·&nbsp; Sep 2016 – May 2021</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Jeffrey Sen &nbsp;·&nbsp; San Jose, CA &nbsp;·&nbsp;
+  <a href="mailto:jeffsen98@gmail.com">jeffsen98@gmail.com</a>
+  &nbsp;·&nbsp; <span id="year"></span>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
