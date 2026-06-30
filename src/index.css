@@ -1,0 +1,589 @@
+/* =========================================================================
+   Liminal Frequency — Jeffrey Sen retro resume
+   Design tokens, keyframes, and section styles (hi-fi from design handoff).
+   ========================================================================= */
+
+:root {
+  /* Backgrounds */
+  --bg: #060807;
+  --panel: #04100e;
+
+  /* Neons */
+  --cyan: #00e5ff;
+  --magenta: #ff2ec4;
+  --amber: #ffe14d;
+
+  /* Text */
+  --white: #fff;
+  --heading: #eef4f1;
+  --default: #c9d4cf;
+  --readme: #b9c5bf;
+  --muted: #9aa7a0;
+  --dim: #5f6b65;
+  --dim2: #7d8a84;
+  --faint: #46524c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--default);
+  font-family: 'JetBrains Mono', monospace;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ------------------------------------------------------------------ */
+/* Keyframes (durations/stops exact per handoff)                       */
+/* ------------------------------------------------------------------ */
+@keyframes scanroll {
+  from { background-position: 0 0; }
+  to { background-position: 0 6px; }
+}
+@keyframes neonflk {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
+  20%, 24%, 55% { opacity: 0.45; }
+}
+@keyframes blink {
+  0%, 48% { opacity: 1; }
+  49%, 100% { opacity: 0; }
+}
+@keyframes barpulse {
+  0%, 100% { transform: scaleY(0.28); }
+  50% { transform: scaleY(1); }
+}
+@keyframes sweep {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(220%); }
+}
+@keyframes hardflk {
+  0%, 100% { opacity: 1; }
+  3% { opacity: 0.22; }
+  5% { opacity: 1; }
+  6% { opacity: 0.4; }
+  8% { opacity: 1; }
+  52% { opacity: 1; }
+  54% { opacity: 0.12; }
+  56% { opacity: 1; }
+}
+@keyframes dimflk {
+  0%, 45% { opacity: 0; }
+  47% { opacity: 0.55; }
+  48% { opacity: 0; }
+  49% { opacity: 0.32; }
+  50% { opacity: 0; }
+  82% { opacity: 0; }
+  83% { opacity: 0.5; }
+  84% { opacity: 0; }
+}
+
+/* ------------------------------------------------------------------ */
+/* Frame                                                              */
+/* ------------------------------------------------------------------ */
+.frame {
+  width: 1180px;
+  max-width: 100%;
+  margin: 0 auto;
+  background: var(--bg);
+  color: var(--default);
+  font-family: 'JetBrains Mono', monospace;
+  position: relative;
+}
+
+/* ------------------------------------------------------------------ */
+/* 1. Arcade top HUD                                                  */
+/* ------------------------------------------------------------------ */
+.hud {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--panel);
+  border-bottom: 1px solid rgba(0, 229, 255, 0.25);
+  padding: 11px 20px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+.hud .left { color: var(--cyan); }
+.hud .left b { color: var(--magenta); font-weight: 400; }
+.hud .center { color: var(--dim2); }
+.hud .center b { color: var(--amber); font-weight: 400; animation: blink 1.6s steps(1) infinite; }
+.hud .right { color: var(--cyan); }
+.hud .right b { color: var(--white); font-weight: 400; }
+
+/* ------------------------------------------------------------------ */
+/* 2. Hero / CRT broadcast                                            */
+/* ------------------------------------------------------------------ */
+.hero {
+  position: relative;
+  height: 560px;
+  overflow: hidden;
+  background: radial-gradient(150% 95% at 50% 16%, #14231f 0%, #0a100e 52%, #050706 100%);
+}
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 229, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 255, 0.045) 1px, transparent 1px);
+  background-size: 38px 38px;
+}
+
+.no-signal {
+  position: absolute;
+  left: 50%;
+  top: 54px;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.no-signal .sign {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--magenta);
+  text-shadow: 0 0 10px rgba(255, 46, 196, 0.5);
+  animation: hardflk 5s steps(1) infinite;
+}
+.no-signal .level {
+  margin-top: 9px;
+  font: 400 11px/1 'JetBrains Mono', monospace;
+  letter-spacing: 7px;
+  color: var(--dim);
+  animation: hardflk 7s steps(1) infinite 1.4s;
+}
+
+.marquee-wrap {
+  position: absolute;
+  left: 50%;
+  top: 150px;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 100%;
+}
+.marquee {
+  display: inline-block;
+  border: 1px solid rgba(0, 229, 255, 0.35);
+  padding: 22px 40px;
+  background: rgba(4, 16, 14, 0.35);
+  box-shadow: 0 0 40px rgba(0, 229, 255, 0.12), inset 0 0 30px rgba(0, 229, 255, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+.marquee .sheen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(0, 229, 255, 0.12), transparent);
+  animation: sweep 6s ease-in-out infinite;
+}
+.marquee .name {
+  font-family: 'VT323', monospace;
+  font-size: 96px;
+  line-height: 0.82;
+  color: var(--cyan);
+  text-shadow: 0 0 18px rgba(0, 229, 255, 0.6);
+  animation: neonflk 9s infinite;
+}
+.marquee .subtitle {
+  margin-top: 2px;
+  font-family: 'VT323', monospace;
+  font-size: 36px;
+  color: var(--magenta);
+  text-shadow: 0 0 14px rgba(255, 46, 196, 0.55);
+  animation: neonflk 6s infinite 1s;
+}
+
+.tagline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 74px;
+  text-align: center;
+  font: 400 13px/1.7 'JetBrains Mono', monospace;
+  color: var(--muted);
+}
+.tagline .arrow { color: var(--cyan); }
+.tagline .meta { color: var(--dim); }
+
+.insert-coin {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 30px;
+  text-align: center;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--amber);
+  animation: blink 1.1s steps(1) infinite;
+}
+
+.scanlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.22) 0 1px, transparent 1px 3px);
+  animation: scanroll 0.7s steps(2) infinite;
+}
+.dimflicker {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: #000;
+  opacity: 0;
+  animation: dimflk 6.5s steps(1) infinite;
+}
+.vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 150px 40px rgba(0, 0, 0, 0.72);
+}
+
+/* ------------------------------------------------------------------ */
+/* Content shell + section labels                                     */
+/* ------------------------------------------------------------------ */
+.content {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 44px 32px 0;
+}
+
+.sec-label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.sec-label .tag {
+  font: 400 11px/1 'Press Start 2P', monospace;
+  letter-spacing: 1px;
+  color: var(--cyan);
+}
+.sec-label .rule {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(0, 229, 255, 0.4), transparent);
+}
+
+/* ------------------------------------------------------------------ */
+/* 3. README.TXT                                                      */
+/* ------------------------------------------------------------------ */
+.readme-head {
+  margin-bottom: 18px;
+}
+.equalizer {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 18px;
+}
+.equalizer span {
+  width: 3px;
+  height: 18px;
+  transform-origin: bottom;
+  animation: barpulse 0.9s ease-in-out infinite;
+}
+.equalizer span:nth-child(1) { background: var(--cyan); animation-delay: 0s; }
+.equalizer span:nth-child(2) { background: var(--magenta); animation-delay: 0.2s; }
+.equalizer span:nth-child(3) { background: var(--cyan); animation-delay: 0.4s; }
+.equalizer span:nth-child(4) { background: var(--magenta); animation-delay: 0.1s; }
+
+.readme-box {
+  border: 1px solid rgba(0, 229, 255, 0.22);
+  background: rgba(4, 16, 14, 0.5);
+  padding: 22px 24px;
+  position: relative;
+}
+.readme-box .tick-tl {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid var(--cyan);
+  border-left: 2px solid var(--cyan);
+}
+.readme-box .tick-br {
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid var(--magenta);
+  border-right: 2px solid var(--magenta);
+}
+.readme-box p {
+  margin: 0;
+  font: 400 14px/1.85 'JetBrains Mono', monospace;
+  color: var(--readme);
+}
+.readme-box .prompt {
+  color: var(--cyan);
+}
+
+/* ------------------------------------------------------------------ */
+/* 4. CAREER.LOG cards                                                */
+/* ------------------------------------------------------------------ */
+.career-head {
+  margin: 48px 0 24px;
+}
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.card {
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  background: linear-gradient(180deg, rgba(8, 18, 16, 0.6), rgba(5, 8, 7, 0.4));
+  padding: 22px 24px;
+  position: relative;
+  transition: all 0.2s;
+}
+.card:hover {
+  border-color: rgba(0, 229, 255, 0.6);
+  box-shadow: 0 0 26px rgba(0, 229, 255, 0.16);
+  transform: translateX(3px);
+}
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.card .stage {
+  font: 400 8px/1 'Press Start 2P', monospace;
+  color: var(--amber);
+  margin-bottom: 9px;
+}
+.card .company {
+  font: 700 21px/1.1 'JetBrains Mono', monospace;
+  color: var(--white);
+}
+.card .role {
+  margin-top: 4px;
+  font: 400 13px/1.3 'JetBrains Mono', monospace;
+  color: var(--cyan);
+}
+.card .date {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  color: var(--magenta);
+  white-space: nowrap;
+  padding-top: 4px;
+}
+.card ul {
+  margin: 15px 0 0;
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.card li {
+  font: 400 13px/1.6 'JetBrains Mono', monospace;
+  color: var(--muted);
+  padding-left: 20px;
+  position: relative;
+}
+.card li::before {
+  content: '\25B8'; /* ▸ */
+  position: absolute;
+  left: 0;
+  color: var(--cyan);
+}
+
+/* ------------------------------------------------------------------ */
+/* 5. EDU.LOG + STACK.SYS                                             */
+/* ------------------------------------------------------------------ */
+.two-up {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 48px;
+}
+.col-head {
+  margin-bottom: 20px;
+}
+.edu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.edu {
+  border-left: 2px solid var(--cyan);
+  padding: 2px 0 2px 14px;
+}
+.edu.current {
+  border-left-color: var(--magenta);
+}
+.edu .date {
+  font: 400 9px/1.3 'Press Start 2P', monospace;
+  color: var(--cyan);
+  margin-bottom: 7px;
+}
+.edu.current .date {
+  color: var(--magenta);
+}
+.edu .school {
+  font: 700 14px/1.3 'JetBrains Mono', monospace;
+  color: var(--white);
+}
+.edu .program {
+  font: 400 12px/1.4 'JetBrains Mono', monospace;
+  color: var(--muted);
+}
+
+.stack-group {
+  font: 400 9px/1 'Press Start 2P', monospace;
+  color: var(--magenta);
+  margin-bottom: 12px;
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.chips.gap-below {
+  margin-bottom: 20px;
+}
+.chip {
+  font: 400 11px 'JetBrains Mono', monospace;
+  color: var(--default);
+  border: 1px solid rgba(0, 229, 255, 0.35);
+  padding: 5px 9px;
+}
+.chip.cad {
+  border-color: rgba(255, 46, 196, 0.35);
+}
+
+/* ------------------------------------------------------------------ */
+/* 6. OPEN CHANNEL contact                                            */
+/* ------------------------------------------------------------------ */
+.contact {
+  position: relative;
+  margin: 52px 0 0;
+  padding: 46px 24px 50px;
+  text-align: center;
+  overflow: hidden;
+  border-top: 1px solid rgba(0, 229, 255, 0.2);
+}
+.contact .channel {
+  font-family: 'VT323', monospace;
+  font-size: 46px;
+  color: var(--cyan);
+  text-shadow: 0 0 16px rgba(0, 229, 255, 0.55);
+  animation: neonflk 8s infinite;
+}
+.contact .lines {
+  margin-top: 14px;
+  font: 400 14px/2 'JetBrains Mono', monospace;
+  color: var(--default);
+}
+.contact .btns {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+.btn {
+  text-decoration: none;
+  font: 400 10px/1 'Press Start 2P', monospace;
+  padding: 13px 18px;
+}
+.btn-send {
+  color: #04100e;
+  background: var(--cyan);
+  box-shadow: 0 0 18px rgba(0, 229, 255, 0.4);
+}
+.btn-call {
+  color: var(--magenta);
+  border: 1px solid rgba(255, 46, 196, 0.5);
+}
+
+/* ------------------------------------------------------------------ */
+/* 7. Footer                                                          */
+/* ------------------------------------------------------------------ */
+.footer {
+  margin-top: 8px;
+  padding: 18px 0 26px;
+  text-align: center;
+  font: 400 9px/1.8 'Press Start 2P', monospace;
+  color: var(--faint);
+}
+.footer .blink {
+  color: var(--dim2);
+  animation: blink 1.4s steps(1) infinite;
+}
+
+/* ------------------------------------------------------------------ */
+/* Responsive                                                         */
+/* ------------------------------------------------------------------ */
+@media (max-width: 680px) {
+  .hero {
+    height: 480px;
+  }
+  .no-signal {
+    top: 36px;
+  }
+  .marquee-wrap {
+    top: 124px;
+  }
+  .marquee {
+    padding: 18px 22px;
+  }
+  .marquee .name {
+    font-size: 56px;
+  }
+  .marquee .subtitle {
+    font-size: 22px;
+  }
+  .no-signal .sign {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+  .no-signal .level {
+    letter-spacing: 5px;
+  }
+  .tagline {
+    font-size: 12px;
+    padding: 0 16px;
+  }
+  .content {
+    padding: 36px 20px 0;
+  }
+  .two-up {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .contact .channel {
+    font-size: 38px;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Reduced motion — gate flicker / scanline / sweep / blink           */
+/* ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+  }
+  /* Keep equalizer bars at full, readable height when static. */
+  .equalizer span {
+    transform: scaleY(1);
+  }
+}

@@ -1,0 +1,10 @@
+node_modules
+dist
+dist-ssr
+*.local
+.DS_Store
+
+# Design handoff source (kept locally, not part of the site)
+extracted
+*.tsbuildinfo
+Retro resume website design.zip
