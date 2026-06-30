@@ -70,6 +70,6 @@ export const education: Education[] = [
 ]
 
 export const skills = {
-  code: ['Python', 'Java', 'C++', 'MATLAB'],
+  code: ['Python', 'Java', 'C++', 'JavaScript', 'HTML/CSS', 'MATLAB'],
   cad: ['NX', 'SolidWorks', 'Inventor', 'AutoCAD', 'ANSYS', 'Fluent', 'CATIA', 'Rhino'],
 }
