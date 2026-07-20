@@ -56,6 +56,21 @@ export const roles: Role[] = [
   },
 ]
 
+// Side projects reuse the Role card shape (stage/company/role/date/bullets).
+export const projects: Role[] = [
+  {
+    stage: 'SIDE QUEST · ACTIVE',
+    company: 'Heater',
+    role: 'AI Rugby Highlight Generator · Python / PyTorch / FastAPI',
+    date: '2026 → NOW',
+    bullets: [
+      'Built a computer-vision pipeline (YOLOv8, ByteTrack, CLIP, SAM 2) that turns full match video into single-player highlight reels — 94% recall of human-verified moments on a consumer GPU.',
+      'Designed camera-motion-compensated event detection and a human-in-the-loop identity system where one click seeds segmentation tracking, cutting per-match labeling from days to under an hour.',
+      'Fused vision, audio (referee-whistle detection), and jersey-number OCR to recognize game states, auto-suppress dead-ball footage, and cut GPU processing 4×.',
+    ],
+  },
+]
+
 export interface Education {
   date: string
   school: string
@@ -70,6 +85,6 @@ export const education: Education[] = [
 ]
 
 export const skills = {
-  code: ['Python', 'Java', 'C++', 'JavaScript', 'HTML/CSS', 'MATLAB'],
+  code: ['Python', 'PyTorch', 'FastAPI', 'Java', 'C++', 'JavaScript', 'HTML/CSS', 'MATLAB'],
   cad: ['NX', 'SolidWorks', 'Inventor', 'AutoCAD', 'ANSYS', 'Fluent', 'CATIA', 'Rhino'],
 }
