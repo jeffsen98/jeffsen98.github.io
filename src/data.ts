@@ -59,6 +59,17 @@ export const roles: Role[] = [
 // Side projects reuse the Role card shape (stage/company/role/date/bullets).
 export const projects: Role[] = [
   {
+    stage: 'SIDE QUEST · LIVE',
+    company: 'Find Your Rugby Club',
+    role: 'Nationwide Club Directory & Stats Platform · findyourrugbyclub.com',
+    date: '2026 → NOW',
+    bullets: [
+      'Launched a nationwide club rugby directory — interactive map, geolocated search, and weekly-updated ladders, rankings, and stats for 350+ men’s and women’s clubs — now in partnership talks with USA Rugby as the national club finder.',
+      'Reverse-engineered an undocumented GraphQL API into an automated data pipeline aggregating fixtures and results from 55+ competitions; designed a national ranking algorithm blending win %, strength of schedule, and playoff outcomes across three divisions.',
+      'Built season leaderboards for 4,400+ players by fusing match lineups with play-by-play commentary, on a $0/month serverless stack (GitHub Pages + Google Sheets as CMS) with a mobile-first Leaflet.js UI.',
+    ],
+  },
+  {
     stage: 'SIDE QUEST · ACTIVE',
     company: 'Heater',
     role: 'AI Rugby Highlight Generator · Python / PyTorch / FastAPI',
